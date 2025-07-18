@@ -323,42 +323,6 @@
     <span aria-label="Öpücük emojisi" class="emoji" role="img">😘</span>
   </div>
 
-  <!-- Evlilik Teklifi -->
-  <div aria-label="Evlilik teklif butonları" class="proposal-container" role="region">
-    <button id="yesBtn" class="proposal-btn" aria-label="Evet, evlenirim">Evet</button>
-    <button id="noBtn" class="proposal-btn" aria-label="Hayır, evlenmem">Hayır</button>
-  </div>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-
-    // Sayfa genişliği ve yükseklik hesapları
-    const container = document.querySelector(".proposal-container");
-    const containerRect = container.getBoundingClientRect();
-
-    function getRandomPosition() {
-      // container içinde random bir pozisyon (button boyutu hesaba katılıyor)
-      const maxX = container.clientWidth - noBtn.offsetWidth;
-      const maxY = container.clientHeight - noBtn.offsetHeight;
-
-      // %10-90 arası bırak, kenarlara yapışmasın
-      const randomX = Math.floor(Math.random() * (maxX * 0.8)) + maxX * 0.1;
-      const randomY = Math.floor(Math.random() * (maxY * 0.8)) + maxY * 0.1;
-
-      return { x: randomX, y: randomY };
-    }
-
-    noBtn.addEventListener("mouseenter", () => {
-      // Kaçacak, ama sürekli tıklanabilir kalacak
-      const pos = getRandomPosition();
-      noBtn.style.left = pos.x + "px";
-      noBtn.style.top = pos.y + "px";
-    });
-
-    yesBtn.addEventListener("click", () => {
-      alert("Tebrikler! Bir ömür boyu mutluluklar dilerim ❤️💍");
-    });
-  </script>
 </body>
 </html>
