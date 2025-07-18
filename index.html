@@ -1,60 +1,67 @@
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Sevgiliye Aşk Mesajı
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Sevgiliye Aşk Mesajı</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
   <style>
-   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap");
 
+    /* === Arka plan koyulaştırıldı, sadeleştirildi === */
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0e7ff;
+      font-family: "Roboto", sans-serif;
+      background: #0b0c10; /* koyu siyahımsı ton */
       min-height: 100vh;
+      margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 2rem;
       user-select: none;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 0.15em;
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       text-align: center;
-      font-size: 4.5rem;
+      font-size: 5rem;
       color: #ff2d55;
       text-shadow:
-        0 0 5px #ff2d55,
-        0 0 10px #ff2d55,
-        0 0 20px #ff2d55,
-        0 0 40px #ff2d55;
+        0 0 7px #ff2d55,
+        0 0 15px #ff2d55,
+        0 0 30px #ff2d55,
+        0 0 60px #ff2d55,
+        0 0 90px #ff2d55;
       animation: neonPulse 2.5s ease-in-out infinite alternate;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      user-select: text;
     }
 
     @keyframes neonPulse {
       0% {
         text-shadow:
-          0 0 5px #ff2d55,
-          0 0 10px #ff2d55,
-          0 0 20px #ff2d55,
-          0 0 40px #ff2d55;
+          0 0 7px #ff2d55,
+          0 0 15px #ff2d55,
+          0 0 30px #ff2d55,
+          0 0 60px #ff2d55,
+          0 0 90px #ff2d55;
         color: #ff2d55;
       }
       100% {
         text-shadow:
-          0 0 10px #ff6f91,
-          0 0 20px #ff6f91,
+          0 0 15px #ff6f91,
           0 0 30px #ff6f91,
-          0 0 50px #ff6f91;
+          0 0 45px #ff6f91,
+          0 0 75px #ff6f91,
+          0 0 120px #ff6f91;
         color: #ff6f91;
       }
     }
@@ -62,200 +69,296 @@
     .heart-container {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      perspective: 800px;
     }
 
     .heart-icon {
       color: #ff2d55;
-      filter: drop-shadow(0 0 6px #ff2d55);
-      animation: heartBeat 1.5s ease-in-out infinite;
-      transition: filter 0.3s ease;
-      font-size: 4.5rem;
+      filter: drop-shadow(0 0 8px #ff2d55);
+      animation: heartBeat 1.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+      font-size: 5rem;
+      cursor: default;
+      transform-origin: center bottom;
+      transition: filter 0.4s ease, transform 0.4s ease;
+      will-change: transform, filter;
+      text-shadow:
+        0 0 10px #ff2d55,
+        0 0 20px #ff2d55,
+        0 0 30px #ff2d55;
+      user-select: none;
     }
 
     .heart-icon:nth-child(2) {
-      animation-delay: 0.3s;
+      animation-delay: 0.25s;
       color: #ff6f91;
-      filter: drop-shadow(0 0 8px #ff6f91);
-      font-size: 3.75rem;
+      filter: drop-shadow(0 0 10px #ff6f91);
+      font-size: 4.25rem;
+      text-shadow:
+        0 0 12px #ff6f91,
+        0 0 22px #ff6f91,
+        0 0 32px #ff6f91;
     }
 
     .heart-icon:nth-child(3) {
-      animation-delay: 0.6s;
+      animation-delay: 0.5s;
       color: #ff9bb3;
-      filter: drop-shadow(0 0 10px #ff9bb3);
-      font-size: 3rem;
+      filter: drop-shadow(0 0 12px #ff9bb3);
+      font-size: 3.5rem;
+      text-shadow:
+        0 0 15px #ff9bb3,
+        0 0 25px #ff9bb3,
+        0 0 40px #ff9bb3;
     }
 
     @keyframes heartBeat {
-      0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 6px currentColor);
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 8px currentColor);
         opacity: 1;
       }
       50% {
-        transform: scale(1.4);
-        filter: drop-shadow(0 0 20px currentColor);
-        opacity: 0.8;
+        transform: scale(1.5) rotate(15deg);
+        filter: drop-shadow(0 0 25px currentColor);
+        opacity: 0.9;
       }
     }
 
+    /* === Mesaj kutusunu koyu ve opak yaptık === */
     .message-box {
-      max-width: 520px;
-      background: rgba(255 255 255 / 0.07);
-      border: 1px solid rgba(255 255 255 / 0.18);
-      border-radius: 1.25rem;
-      padding: 2rem 2.5rem;
+      max-width: 540px;
+      background: rgba(20, 20, 30, 0.85);
+      border: 2px solid rgba(255, 45, 85, 0.6);
+      border-radius: 1.8rem;
+      padding: 2.5rem 3rem;
       box-shadow:
-        0 0 15px rgba(255 45 85, 0.35),
-        inset 0 0 20px rgba(255 45 85, 0.25);
-      font-size: 1.375rem;
-      line-height: 1.7;
+        0 0 25px rgba(255, 45, 85, 0.85),
+        inset 0 0 30px rgba(255, 45, 85, 0.6);
+      font-size: 1.5rem;
+      line-height: 2;
       color: #ffd6e8;
       font-weight: 700;
       text-align: center;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       position: relative;
       user-select: text;
+      letter-spacing: 0.04em;
+      text-shadow:
+        0 0 4px #ff2d55,
+        0 0 7px #ff2d55;
+      transition: box-shadow 0.3s ease;
+      margin-bottom: 3rem;
+    }
+    .message-box:hover {
+      box-shadow:
+        0 0 45px rgba(255, 45, 85, 1),
+        inset 0 0 50px rgba(255, 45, 85, 0.8);
     }
 
     .highlight {
       color: #ff2d55;
       font-weight: 900;
       text-shadow:
-        0 0 8px #ff2d55,
-        0 0 15px #ff2d55;
+        0 0 10px #ff2d55,
+        0 0 25px #ff2d55,
+        0 0 35px #ff2d55;
       animation: flicker 3s linear infinite;
       cursor: default;
+      user-select: text;
+      display: inline-block;
+      margin-bottom: 0.35rem;
     }
 
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
         opacity: 1;
         text-shadow:
-          0 0 8px #ff2d55,
-          0 0 15px #ff2d55;
+          0 0 10px #ff2d55,
+          0 0 25px #ff2d55,
+          0 0 35px #ff2d55;
       }
-      20%, 22%, 24%, 55% {
-        opacity: 0.4;
+      20%,
+      22%,
+      24%,
+      55% {
+        opacity: 0.3;
         text-shadow: none;
       }
     }
 
     .emoji {
       display: inline-block;
-      margin-left: 0.3rem;
-      animation: bounceEmoji 2.5s ease-in-out infinite;
-      font-size: 1.5rem;
+      margin-left: 0.4rem;
+      animation: bounceEmoji 2.8s ease-in-out infinite;
+      font-size: 1.8rem;
+      user-select: none;
     }
 
     @keyframes bounceEmoji {
-      0%, 100% {
+      0%,
+      100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-6px);
+        transform: translateY(-8px);
       }
     }
 
-    .tech-icons {
-      margin-top: 3.5rem;
+    /* --- Butonlar --- */
+    .proposal-container {
       display: flex;
       justify-content: center;
       gap: 2.5rem;
-      flex-wrap: wrap;
+      margin-top: 1rem;
+      user-select: none;
+      position: relative;
+      width: 100%;
+      max-width: 600px;
     }
 
-    .tech-icons img {
-      width: 96px;
-      height: 96px;
-      border-radius: 1.25rem;
+    button.proposal-btn {
+      background: linear-gradient(135deg, #ff2d55, #ff6f91);
+      border: none;
+      border-radius: 1rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: white;
+      cursor: pointer;
       box-shadow:
-        0 0 15px rgba(255 45 85, 0.6),
-        inset 0 0 10px rgba(255 45 85, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      filter: drop-shadow(0 0 8px #ff2d55);
+        0 0 15px #ff2d55,
+        inset 0 0 15px #ff6f91;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      min-width: 120px;
+      flex-shrink: 0;
+      text-align: center;
     }
-
-    .tech-icons img:hover {
-      transform: scale(1.15) rotate(5deg);
+    button.proposal-btn:hover {
       box-shadow:
-        0 0 25px #ff2d55,
-        inset 0 0 20px #ff2d55;
+        0 0 30px #ff2d55,
+        inset 0 0 25px #ff6f91;
+      transform: scale(1.05);
     }
 
+    /* Hayır butonunun kaçma animasyonu için geçiş */
+    button#noBtn {
+      position: absolute;
+      top: 0;
+      left: calc(50% + 80px); /* başlangıç sağ taraf */
+      transition: top 0.4s ease, left 0.4s ease;
+    }
+
+    button#yesBtn {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 160px); /* başlangıç sol taraf */
+    }
+
+    /* Responsive */
     @media (max-width: 480px) {
       h1 {
-        font-size: 3rem;
-        letter-spacing: 0.1em;
+        font-size: 3.2rem;
+        letter-spacing: 0.12em;
+        margin-bottom: 1.2rem;
       }
       .heart-icon {
-        font-size: 3rem !important;
+        font-size: 3.8rem !important;
       }
       .heart-icon:nth-child(2) {
-        font-size: 2.5rem !important;
+        font-size: 3.2rem !important;
       }
       .heart-icon:nth-child(3) {
-        font-size: 2rem !important;
+        font-size: 2.6rem !important;
       }
       .message-box {
-        font-size: 1rem;
-        padding: 1.5rem 1.75rem;
+        font-size: 1.1rem;
+        padding: 1.8rem 2rem;
         max-width: 90vw;
+        line-height: 1.6;
       }
-      .tech-icons {
-        gap: 1.5rem;
+      .proposal-container {
+        max-width: 90vw;
+        height: 60px;
       }
-      .tech-icons img {
-        width: 72px;
-        height: 72px;
+      button#noBtn,
+      button#yesBtn {
+        position: static;
+        margin: 0 0.5rem;
+        transform: none !important;
       }
     }
   </style>
- </head>
- <body>
-  <h1>
-   canımmmmm eşimmmm Sedefimmm
-  </h1>
+</head>
+<body>
+  <h1>Canımmmmm Eşimmmm Sedefimmm</h1>
   <div aria-hidden="true" class="heart-container">
-   <i class="fas fa-heart heart-icon">
-   </i>
-   <i class="fas fa-heart heart-icon">
-   </i>
-   <i class="fas fa-heart heart-icon">
-   </i>
+    <i class="fas fa-heart heart-icon"></i>
+    <i class="fas fa-heart heart-icon"></i>
+    <i class="fas fa-heart heart-icon"></i>
   </div>
   <div aria-label="Sevgiliye aşk dolu mesaj" class="message-box" role="region">
-   <span class="highlight">
-    biricik küçük kızımmm
-   </span>
-   ,
-   <br/>
-   <span class="highlight">
-    tatlı baş belammmm
-   </span>
-   ,
-   <br/>
-   <span class="highlight">
-    minnoş fırfırımmmm
-   </span>
-   ,
-   <br/>
-   <br/>
-   <span class="highlight">
-    iyi ki varsınnn
-   </span>
-   ,
-   <br/>
-   <span class="highlight">
-    seni çok seviyorum
-   </span>
-   <span aria-label="Öpücük emojisi" class="emoji" role="img">
-    😘
-   </span>
+    <span class="highlight">Biricik küçük kızımmm</span>,
+    <br />
+    <span class="highlight">Tatlı baş belammmm</span>,
+    <br />
+    <span class="highlight">Minnoş fırfırımmmm</span>,
+    <br /><br />
+    <span class="highlight">İyi ki varsınnn</span>,
+    <br />
+    <span class="highlight">Seni çok seviyorum</span>
+    <span aria-label="Öpücük emojisi" class="emoji" role="img">😘</span>
   </div>
 
- </body>
+  <!-- Evlilik Teklifi -->
+  <div aria-label="Evlilik teklif butonları" class="proposal-container" role="region">
+    <button id="yesBtn" class="proposal-btn" aria-label="Evet, evlenirim">Evet</button>
+    <button id="noBtn" class="proposal-btn" aria-label="Hayır, evlenmem">Hayır</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    // Sayfa genişliği ve yükseklik hesapları
+    const container = document.querySelector(".proposal-container");
+    const containerRect = container.getBoundingClientRect();
+
+    function getRandomPosition() {
+      // container içinde random bir pozisyon (button boyutu hesaba katılıyor)
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = container.clientHeight - noBtn.offsetHeight;
+
+      // %10-90 arası bırak, kenarlara yapışmasın
+      const randomX = Math.floor(Math.random() * (maxX * 0.8)) + maxX * 0.1;
+      const randomY = Math.floor(Math.random() * (maxY * 0.8)) + maxY * 0.1;
+
+      return { x: randomX, y: randomY };
+    }
+
+    noBtn.addEventListener("mouseenter", () => {
+      // Kaçacak, ama sürekli tıklanabilir kalacak
+      const pos = getRandomPosition();
+      noBtn.style.left = pos.x + "px";
+      noBtn.style.top = pos.y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      alert("Tebrikler! Bir ömür boyu mutluluklar dilerim ❤️💍");
+    });
+  </script>
+</body>
 </html>
